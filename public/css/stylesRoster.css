@@ -1,0 +1,38 @@
+h1{
+    color: gold;
+    font-size: 40px;
+    text-align: center;
+}
+
+body{
+    min-width: 955px;
+    background: url("/css/images/Backgrounds/field.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.teamTable{
+    align: auto;
+    border: solid black 1px;
+    border-collapse: collapse;
+    margin: 0px auto;
+}
+
+.tdimage{
+    width:400px;
+}
+
+.tableteamimage{
+    width: 60%;
+}
+
+td{
+    border: solid goldenrod 5px;
+    text-align: center;
+    /* font-size: px; */
+    color: orange;
+    padding: 10px;
+    background: black;
+}

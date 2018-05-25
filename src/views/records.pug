@@ -1,0 +1,25 @@
+
+html 
+    head
+        title=title
+        script(src="")
+        link(rel="stylesheet", href="/css/stylesPrevious.css")
+        link(rel="stylesheet", href="/css/stylesMenu.css")
+    body
+        div(class=["myContainer","roundedCorner"])
+            h1(id="myH1")=h1Text
+        div(class="centerContainer")
+            ul(class="categories")
+                    li(class="homeT"): a(href="/") Home   
+                    li(class="contactT"): a(href="/contactUs") Contact Us  
+                    li(class="rosterT"): a(href="/roster") Roster   
+                    li(class="recordsT"): a(href="/records") Previous Season    
+                    li(class="ordersT"): a(href="/orders") Store
+        div(class="teamrecord")
+            each record in records
+                div(class="recordmember")
+                    table(class="recordtable")
+                        tr                                
+                            td(class="recordmembername")=record.year
+                            td(class="teammemberrecord")=record.record
+                            //- need photo of each teammember

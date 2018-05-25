@@ -1,0 +1,41 @@
+h1{
+    color: gold;
+    font-size: 40px;
+    text-align: center;
+}
+body{
+    min-width: 955px;
+    background: url("/css/images/Backgrounds/neumontcampus.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    /* background-image: url("/css/images/neumontcampus.jpg"); */
+}
+
+.contactData{
+    text-align: center;
+    background-color:rgba(192, 192, 192, .8);
+    margin-top: 5%;
+}
+.contacts{
+    
+    display: inline-table;
+    margin: 30px 20px;
+    font-size: 30px;
+    align:center;
+    text-align: left;
+
+}
+
+.contactname{
+    color: magenta;
+}
+
+.contactphone{
+color: magenta;
+}
+
+.contactemail{
+color: magenta;
+}

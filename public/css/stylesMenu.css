@@ -1,0 +1,67 @@
+.centerContainer{
+    text-align: center;
+    background-color: rgba(255, 165, 0, .85);
+    /* min-width: 955px; */
+    /* opacity: .7; */
+}
+
+.categories{
+    color: orange;
+    font-size: 19px;
+    width: 75%;
+    /* list-style: none; */
+    margin: 0px auto;
+    transition: width 5s, height 5s;
+}
+
+.categories li{
+    display: inline-block;
+    margin: 5%;
+    text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.homeT:hover{
+    color: gray;
+    font-weight: bold;
+    -webkit-background-clip:content-box;
+    background-color: gold;
+
+    width: 5%;
+    height:5%;
+}
+
+.contactT:hover{
+    color: gray;
+    font-weight: bold;
+    background-color: gold;
+    width: 5%;
+    height:5%;
+}
+
+.recordsT:hover{
+    color: gray;
+    font-weight: bold;
+    background-color: gold;
+    width: 5%;
+    height:5%;
+}
+
+.rosterT:hover{
+    color: gray;
+    font-weight: bold;
+    background-color: gold;
+    width: 5%;
+    height:5%;
+}
+
+.ordersT:hover{
+    color: gray;
+    font-weight: bold;
+    background-color: gold;
+    width: 5%;
+    height:5%;
+}

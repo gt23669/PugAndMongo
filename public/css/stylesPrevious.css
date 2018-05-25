@@ -1,0 +1,40 @@
+h1{
+    color: gold;
+    font-size: 40px;
+    text-align: center;
+}
+body{
+    min-width: 955px;
+    background: url("/css/images/Backgrounds/GrayScale_Stripes.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.teamrecord{
+    margin-top: 5%;
+
+}
+.recordtable{
+    width: 20%;
+    margin: 0px auto;
+    border-collapse: collapse;
+    background-color: rgba(0,0,0,.4);
+}
+td{
+    text-align: center; 
+    padding: 10%;
+}
+/* tr{
+    background-color: rgba(255,165,0,.7);
+} */
+.recordmembername{
+    font-size: 20px;
+    color: orange;
+    font-weight: bold;
+}
+.teammemberrecord{
+    font-size: 20px;
+    color: orange;
+    font-weight: bold;
+}

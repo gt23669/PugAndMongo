@@ -1,0 +1,41 @@
+h1{
+    color: gold;
+    font-size: 40px;
+    text-align: center;
+}
+body{
+    min-width: 955px;
+    background: url("/css/images/Backgrounds/GrayScale_Stripes.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    /* background-image: url("/css/images/neumontcampus.jpg"); */
+}
+
+.itemdetails{
+    align: 0 auto;
+}
+
+.itemimage{
+    display: block;
+}
+.orderimage{
+    align-self: auto;
+    width: 350px;
+    height: 350px;
+}
+
+.ordertable{
+    border-collapse: collapse;
+    border: solid 5px orange;
+    margin: 5px;
+}
+
+.orderitem, .orderprice{
+    display: inline-block;
+    margin: 5%;
+    color: gold;
+    font-size: 20px;
+    font-family: Oxygen;
+}
