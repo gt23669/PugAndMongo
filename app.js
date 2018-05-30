@@ -7,6 +7,8 @@ var app = express();
 
 app.use("/", router);
 app.use(express.static(__dirname + "/public"));
+var adminRoutes = require('./src/routes/adminRoutes');
+app.use("/admin/", adminRoutes);
 
 
 app.set('views', './src/views');
