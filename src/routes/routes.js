@@ -77,7 +77,8 @@ router.route("/records").get(
         
     }
 );
-router.route("/orders").get(
+
+router.route("/orders/:item").get(
     function (req, res) {
         // var jsonOB = JSON.parse(fs.readFileSync("./src/data/data.json", "utf8"));
         (async function mongo() {
@@ -86,8 +87,36 @@ router.route("/orders").get(
 
                 var db = client.db(databaseName);
 
-                var items = await db.collection("items").find().toArray();
+                var item = await db.collection("items").findOne({"item": req.params.item})
+                // var monster = await db.collection("monsters").findOne({ "name": req.params.name })
 
+                var model = {
+                    title: "OrderItems",
+                    h1Text: "Items",
+                    item: item
+                };
+                res.render("item", model);
+            } catch (err) {
+                res.send(err);
+            } finally {
+                client.close();
+            }
+        }());
+        
+    }
+);
+
+router.route("/orders").get(
+    function (req, res) {
+        // var jsonOB = JSON.parse(fs.readFileSync("./src/data/data.json", "utf8"));
+        (async function mongo() {
+            try {
+                var client = await mongoClient.connect(url);
+                
+                var db = client.db(databaseName);
+                
+                var items = await db.collection("items").find().toArray();
+                
                 var model = {
                     title: "Roster",
                     h1Text: "Roster",
@@ -103,6 +132,7 @@ router.route("/orders").get(
         
     }
 );
+
 router.route("/contactUs").get(
     function (req, res) {
         (async function mongo() {

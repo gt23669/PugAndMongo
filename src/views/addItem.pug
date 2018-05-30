@@ -15,12 +15,13 @@ html
                     li(class="recordsT"): a(href="/records") Previous Season    
                     li(class="ordersT"): a(href="/orders") Store
         div(class="teamorders")
-            each item in items
-                div(class="itemdetails")
-                    div(class="itemimage")
-                        img(src=item.image class="orderimage")
-                    table(class="ordertable")
-                        tr
-                            td(class="orderitem")
-                                a(href="/orders/"+item.item)=item.item
-                            td(class="orderprice")="$"+item.price
+            //- each item in items
+            //-     div(class="itemdetails")
+            //-         div(class="itemimage")
+            //-             img(src=item.image class="orderimage")
+            //-         table(class="ordertable")
+            //-             tr
+            //-                 td(class="orderitem")
+            //-                     a(href="/orders/"+item.item)=item.item
+            //-                 td(class="orderprice")="$"+item.price
+            
