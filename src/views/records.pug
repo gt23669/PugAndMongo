@@ -10,11 +10,12 @@ html
             h1(id="myH1")=h1Text
         div(class="centerContainer")
             ul(class="categories")
-                    li(class="homeT"): a(href="/") Home   
-                    li(class="contactT"): a(href="/contactUs") Contact Us  
-                    li(class="rosterT"): a(href="/roster") Roster   
-                    li(class="recordsT"): a(href="/records") Previous Season    
-                    li(class="ordersT"): a(href="/orders") Store
+                li(class="homeT"): a(href="/") Home   
+                li(class="contactT"): a(href="/contactUs") Contact Us  
+                li(class="rosterT"): a(href="/roster") Roster   
+                li(class="recordsT"): a(href="/records") Previous Season    
+                li(class="ordersT"): a(href="/orders") Store
+                li(class="additem"): a(href="/additem") AddItem
         div(class="teamrecord")
             each record in records
                 div(class="recordmember")

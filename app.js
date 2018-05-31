@@ -2,8 +2,11 @@
 
 var express = require('express');
 var router = require("./src/routes/routes")
+var bodyParser = require('body-parser');
 var app = express();
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({"extended":true}));
 
 app.use("/", router);
 app.use(express.static(__dirname + "/public"));

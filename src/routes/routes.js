@@ -1,5 +1,7 @@
 
 var express = require('express');
+var bodyParser = require('body-parser')
+
 var fs = require('fs');
 var mongodb = require('mongodb')
 
@@ -45,7 +47,7 @@ router.route("/roster").get(
                 client.close();
             }
         }());
-        
+
     }
 );
 // console.log(jsonOB.roster);
@@ -74,7 +76,7 @@ router.route("/records").get(
                 client.close();
             }
         }());
-        
+
     }
 );
 
@@ -87,7 +89,7 @@ router.route("/orders/:item").get(
 
                 var db = client.db(databaseName);
 
-                var item = await db.collection("items").findOne({"item": req.params.item})
+                var item = await db.collection("items").findOne({ "item": req.params.item })
                 // var monster = await db.collection("monsters").findOne({ "name": req.params.name })
 
                 var model = {
@@ -102,7 +104,7 @@ router.route("/orders/:item").get(
                 client.close();
             }
         }());
-        
+
     }
 );
 
@@ -112,11 +114,11 @@ router.route("/orders").get(
         (async function mongo() {
             try {
                 var client = await mongoClient.connect(url);
-                
+
                 var db = client.db(databaseName);
-                
+
                 var items = await db.collection("items").find().toArray();
-                
+
                 var model = {
                     title: "Roster",
                     h1Text: "Roster",
@@ -129,7 +131,7 @@ router.route("/orders").get(
                 client.close();
             }
         }());
-        
+
     }
 );
 
@@ -155,7 +157,69 @@ router.route("/contactUs").get(
                 client.close();
             }
         }());
-        
+
+    }
+);
+router.route("/additem").get(
+    function (req, res) {
+
+        var model = {
+            title: "addItem",
+            h1Text: "AddYourItem"
+        };
+        res.render("additem", model);
+
+    }
+);
+router.route("/addItemToDB").post(
+    function (req, res) {
+        console.log(req.body);
+        (async function mongo() {
+            try {
+                var client = await mongoClient.connect(url);
+
+                var db = client.db(databaseName);
+
+                // var contactData = await db.collection("contactData").find().toArray();
+                var newItem = {
+                    "image":req.body.imageUrl,
+                    "item":req.body.item,
+                    "price":req.body.price
+                }
+
+                await db.collection('items').insertOne(newItem);
+                res.redirect('/orders/'+req.body.item);
+                // res.render("additem", model);
+            } catch (err) {
+                console.log("Add Item Error");
+                console.log(err);
+                res.json(err);
+            } finally {
+                client.close();
+            }
+        }());
+
+    }
+);
+router.route("/deleteItemFromDB/:item").get(
+    function (req, res) {
+        console.log(req.body);
+        (async function mongo() {
+            try {
+                var client = await mongoClient.connect(url);
+
+                var db = client.db(databaseName);
+
+                await db.collection('items').deleteOne({'item':req.params.item});
+                res.redirect('/orders');
+                // res.render("additem", model);
+            } catch (err) {
+                res.send(err);
+            } finally {
+                client.close();
+            }
+        }());
+
     }
 );
 

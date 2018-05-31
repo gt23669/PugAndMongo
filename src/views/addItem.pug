@@ -14,14 +14,16 @@ html
                     li(class="rosterT"): a(href="/roster") Roster   
                     li(class="recordsT"): a(href="/records") Previous Season    
                     li(class="ordersT"): a(href="/orders") Store
-        div(class="teamorders")
-            //- each item in items
-            //-     div(class="itemdetails")
-            //-         div(class="itemimage")
-            //-             img(src=item.image class="orderimage")
-            //-         table(class="ordertable")
-            //-             tr
-            //-                 td(class="orderitem")
-            //-                     a(href="/orders/"+item.item)=item.item
-            //-                 td(class="orderprice")="$"+item.price
-            
+                    li(class="additem"): a(href="/additem") AddItem
+        div(class="addItemToDB")
+            form(class="inputForm" method='POST' action='/addItemToDB' name='formInput')
+                div
+                    label(for='imageUrl') Url of image:
+                    input(type='text', placeholder='image location' name='imageUrl')
+                div
+                    label(for='item') Name of item:
+                    input(type='text', placeholder='name of item' name='item')
+                div
+                    label(for='price') Price of the item:
+                    input(type='text', placeholder='price of item' name='price')
+                button(type='submit') Add To DB
